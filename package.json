@@ -1,0 +1,28 @@
+{
+  "name": "pokemon",
+  "version": "1.0.0",
+  "description": "A discord bot with a Pokemon-like game",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wzhouwzhou/Pokemon.git"
+  },
+  "keywords": [
+    "Discord",
+    "Bot",
+    "Pokemon"
+  ],
+  "author": "wzhouwzhou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wzhouwzhou/Pokemon/issues"
+  },
+  "homepage": "https://github.com/wzhouwzhou/Pokemon#readme",
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "lodash": "^4.17.4"
+  }
+}
