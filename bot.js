@@ -5,7 +5,7 @@ const Discord = require ('discord.js');
 const fs = require('fs');
 //==================================================================//
 const bot = new Discord.Client();
-bot.PREFIX = "/";
+bot.prefix = "/";
 
 const TOKEN = process.env.TOKEN;
 const fortunes = [
