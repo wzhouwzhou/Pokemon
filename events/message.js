@@ -1,15 +1,15 @@
 module.exports = async client => {
-  client.on("message", (message) => {
+  client.on("message", message => {
 
     if (message.author.bot) return;
+    if (message.content.substring(0,client.prefix.length)!=client.prefix) return;
 
-    const rgPre = _.escapeRegExp(PREFIX);
+    const rgPre = _.escapeRegExp(client.prefix);
     const noP = message.content.replace(new RegExp(`^${rgPre}`), '');
 
     let words = noP.split(/\s+/);
-
+    let args = _.drop(words);
     switch (words[0].toLowerCase()) {
-      let args = _.drop(words);
       case "ping": {
         return message.channel.send("Pong!"); }
 

@@ -1,10 +1,11 @@
+const generateHex = () => '#' + _.random(0, 16777214).toString(16);
 
 module.exports = async client => {
-  client.on("guildMemberAdd"), (member) => {
+  client.on("guildMemberAdd", (member) => {
     const memberG = member.guild;
 
     const welcomeC = memberG.channels.find("name", "general");
-    if(welcomeC) welcomeC.sendMessage(member.toString() + "Welcome!");
+    if(welcomeC) welcomeC.send(member.toString() + "Welcome!");
 
     const autoR = memberG.roles.find('name','Member');
     if(autoR) member.addRole(autoR);
@@ -15,6 +16,6 @@ module.exports = async client => {
       permissions: []
     }).then( (newR) => {
       member.addrole(newR);
-    };
+    });
   });
 };

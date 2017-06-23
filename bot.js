@@ -1,23 +1,24 @@
 //==================================================================//
-const Discord = require ('discord.js');
-const _ = require ('lodash');
+global._ = require ('lodash');
 //==================================================================//
+const Discord = require ('discord.js');
+const fs = require('fs');
+//==================================================================//
+const bot = new Discord.Client();
+bot.PREFIX = "/";
+
 const TOKEN = process.env.TOKEN;
-const PREFIX = "/";
 const fortunes = [
     "Yes",
     "No",
     "Maybe",
     "I think so"
 ];
-const bot = new Discord.Client();
-//==================================================================//
-const generateHex = () => '#' + _.random(0, 16777214).toString(16);
 //==================================================================//
 fs.readdir('./events/', (err, events) => {
-  if (err) console.error(err);
+  if (err) throw(err);
   events.forEach(async e => {
-    await require(`./events/${e}`)(client);
+    await require(`./events/${e}`)(bot);
   });
 });
 //==================================================================//
